@@ -1,29 +1,26 @@
 const uiContainer = document.querySelector(".container");
-const resetBtn = document.querySelector(".reset");
-const purpleButton = document.querySelector(".purple")
-const redButton = document.querySelector(".red")
-let squareDiv;
-for(let i = 0;i<256;i++){
-   squareDiv =  document.createElement("div");
-   squareDiv.className = "divs"
-    uiContainer.appendChild(squareDiv);
-   
+const gridSizeSlider = document.querySelector(".divsizeslider");
+uiContainer.addEventListener("load",generateBoard(16))
+function generateBoard(size){
+    
+    uiContainer.style.gridTemplateColumns = `repeat(${size},1fr)`;
+    uiContainer.style.gridTemplateRows = `repeat(${size},1fr)`;
+    let totalNumberOfSquares = size * size;
 
-}
-
-const allDivs = document.querySelectorAll(".divs");
-for(elemtent of allDivs){
-    elemtent.addEventListener("mouseover",e=>changeColor(e));
-}
-
-
-function changeColor(e){
-
-    e.target.style.backgroundColor = "purple";
-}
-resetBtn.addEventListener("click",()=>{
-
-    for(element of allDivs){
-        element.style.backgroundColor = "white";
+    for(let i = 0;i<totalNumberOfSquares;i++){
+        let squareDiv = document.createElement("div");
+        squareDiv.style.border = "1px solid black";
+        uiContainer.insertAdjacentElement("beforeend",squareDiv);
     }
+}
+
+
+gridSizeSlider.addEventListener("change",(e)=>{
+    
+    uiContainer.innerHTML = "";
+    generateBoard(e.target.value);
 })
+
+
+
+
