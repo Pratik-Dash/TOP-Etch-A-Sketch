@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,22 @@
     <script src="./app.js" defer></script>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
-    <h2 class="drawMessage">Click anywhere to draw.</h2>
+    <header class="heading">
+        <h1>Etch - A - Sketch</h1>
+    </header>
+    <h2 class="drawMessage">Click anywhere on the board and hover to start drawing. To stop drawing click on the board again.</h2>
     <div class="container"></div>
-    <button class="reset">Reset</button>
-    <button class="erase">Erase</button>
+    <div class="buttonGroup">
+    <button class="reset button">Reset</button>
+    <button class="erase button">Erase</button>
     <input type="range" name="divslider" class="divsizeslider" min="1" max="100" value="16">
-    <input type="color" class="colorPicker">
+    <input type="color" class="colorPicker button" id="colorPicker">
+    <button class="rainbow button">Rainbow</button>
+    </div>
+   
     
-    <button class="rainbow">Rainbow</button>
 </body>
+
 </html>
