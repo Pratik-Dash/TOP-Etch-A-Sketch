@@ -14,16 +14,28 @@
     <header class="heading">
         <h1>Etch - A - Sketch</h1>
     </header>
-    <h2 class="drawMessage">Click anywhere on the board and hover to start drawing. To stop drawing click on the board again.</h2>
-    <div class="container"></div>
+    <div class="content">
     <div class="buttonGroup">
-    <button class="reset button">Reset</button>
+    <label for="colorPicker" class="colorLabel buttons"><input type="color" class="colorPicker" id="colorPicker"></label>
+    <button class="reset">Reset</button>
     <button class="erase button">Erase</button>
-    <input type="range" name="divslider" class="divsizeslider" min="1" max="100" value="16">
-    <input type="color" class="colorPicker button" id="colorPicker">
-    <button class="rainbow button">Rainbow</button>
-    </div>
    
+    
+    <button class="rainbow button buttons">Rainbow</button>
+    
+    <input type="range" name="divslider" class="divsizeslider" min="1" max="100" value="16">
+    </div>
+    <div class="container"></div>
+    
+    
+    </div>
+    
+  <footer>
+    <p>Made by Pratik Dash</p>
+    <a href="https://github.com/Pratik-Dash" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+  </footer> 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
 </body>
 

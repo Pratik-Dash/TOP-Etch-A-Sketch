@@ -5,6 +5,7 @@ const colorPicker = document.querySelector(".colorPicker");
 const rainbow = document.querySelector(".rainbow");
 const drawMessage = document.querySelector(".drawMessage");
 const eraseBtn = document.querySelector(".erase");
+const colorLabel = document.querySelector(".colorLabel")
 let globalColor = "defaultColor";
 uiContainer.addEventListener("load", generateBoard(16))
 let pointerDown = false;
@@ -72,20 +73,23 @@ resetButton.addEventListener("click", () => {
     pointerClicked = "false";
     rainbow.className = "button"
     eraseBtn.className = "button"
-    colorPicker.className  = "button";
+    colorLabel.style.backgroundColor = colorPicker.value;
+  
 });
 colorPicker.addEventListener("click", () => {
 
     globalColor = "color";
-    colorPicker.className  = "active";
     rainbow.className = "button"
     eraseBtn.className = "button"
+})
+colorPicker.addEventListener("change",()=>{
+    colorLabel.style.backgroundColor = colorPicker.value;
 })
 rainbow.addEventListener("click", () => {
 
     globalColor = "rainbow";
     rainbow.className = "active"
-    colorPicker.className  = "button";
+    
     eraseBtn.className = "button"
 })
 eraseBtn.addEventListener("click", () => {
@@ -93,7 +97,8 @@ eraseBtn.addEventListener("click", () => {
     globalColor = "Erase";
     eraseBtn.className = "active"
     rainbow.className = "button"
-    colorPicker.className  = "button";
+    
+    
 })
 
 

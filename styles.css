@@ -2,7 +2,7 @@
 :root{
 
     --backgroundColor:#EFF8E2;
-    --accent:#02010A;
+    --accent:#283845;
    
 }
 body{
@@ -10,9 +10,6 @@ body{
     margin: 0;
     text-align: center;
     font-family: 'Roboto Slab', serif;
-
-
-    
 }
 
 .heading{
@@ -23,10 +20,16 @@ body{
    
 
 }
-
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    padding: 1rem;
+}
 .container{
 
-    margin: 0 auto;
+   
     border-radius: 20px;
     background-color: "white";
     height: 500px;
@@ -49,6 +52,8 @@ h1{
    display: flex;
    justify-content: center;
    margin: 1rem;
+   flex-direction: column;
+   margin: 2rem;
 }
 .button{
 
@@ -56,10 +61,40 @@ h1{
     border-radius: 1rem;
     color: black;
     cursor: pointer;
-    width: 6rem;
+    width: 16rem;
     height: 3rem;
     margin: 1rem;
+    border: 1px solid;
+    background-color: var(--backgroundColor);
+    border: 2px solid black;
+    font-size: medium;
 
+}
+.button:hover{
+    background-color: var(--accent);
+    width: 16.2rem;
+    height: 3.1rem;
+    transition:.2s;
+    color: var(--backgroundColor);
+}
+.reset{
+    padding: 1rem;
+    border-radius: 1rem;
+    color: black;
+    cursor: pointer;
+    width: 16rem;
+    height: 3rem;
+    margin: 1rem;
+    border: 1px solid;
+    background-color: var(--backgroundColor);
+    border: 2px solid black;
+    font-size: medium;
+}
+.reset:hover{
+
+    width: 16.2rem;
+    height: 3.1rem;
+    transition:.2s;
 }
 .active{
 
@@ -68,20 +103,93 @@ h1{
     border-radius: 1rem;
     color: var(--backgroundColor);
     cursor: pointer;
-    width: 6rem;
+    width: 16rem;
     height: 3rem;
     margin: 1rem;
+    font-size: medium;
 }
-.reset:focus{
 
-    padding: 1rem;
-    background-color: var(--accent);
-    border-radius: 1rem;
-    color: var(--backgroundColor);
-    cursor: pointer;
-    width: 6rem;
+.colorPicker{
+    visibility: hidden;
+}
+label{
+    background-color: #3d4143;
+    width: 16rem;
     height: 3rem;
     margin: 1rem;
+    border-radius: 1rem;
+    border: 2px solid;
+    cursor: pointer;
+}
+.colordiv{
+    border:2rem solid black;
+
+}
+.divsizeslider::-webkit-slider-thumb{
+
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    width: 10rem;
+}
+@media only screen and (max-width:450px) {
+   
+    .content{
+       
+        flex-direction: column-reverse;
+        justify-content: center;
+       
+    }
+    .container{
+        margin: 1rem;
+        height: 300px;
+        width: 300px;
+        
+    }
+    .button{
+        width: 200px;
+    }
+    
+    .active{
+
+        padding: 1rem;
+        background-color: var(--accent);
+        border-radius: 1rem;
+        color: var(--backgroundColor);
+        cursor: pointer;
+        width: 200px;
+        margin: 1rem;
+    }
+    .colorLabel{
+        width: 200px;
+    }
+    .reset{
+       
+        width: 200px;
+        
+    }
+
+    
+  }
+  .button:hover{
+
+        
+    width: 16.2rem;
+    transition: .4s;
+}
+
+p{
+    color: #63686C;
+    font-weight: lighter;
+}
+a{
+    text-decoration: none;
+    color: var(--accent);
+}
+ion-icon:hover{
+    height: 32px;
+    width: 32px;
+    transition: .2s;
 }
 
 
